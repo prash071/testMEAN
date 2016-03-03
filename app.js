@@ -17,9 +17,18 @@ app.controller('MainCtrl',[
 
 	$scope.addPostByUser=function(){
 		if (!$scope.title||$scope.title===''){return;}
-		$scope.posts.push({title:$scope.title,up:0});
+		$scope.posts.push({
+			title:$scope.title,
+			link:$scope.link,
+			up:0});
 		$scope.title='';
-	}
+		$scope.link='';
+	};
+
+	$scope.increaseUpvotes=function (post){
+		post.up +=1;
+	};
+
 
 
 
